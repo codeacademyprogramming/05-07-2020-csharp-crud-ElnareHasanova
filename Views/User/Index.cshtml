@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using aspnetmvcmethods.Models;
+@model UserModel
+
+<h2>Index</h2>
+
+<a href="/user/create">Create User</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Name</td>
+            <td>@user.Surname</td>
+            <td>@user.Age</td>
+            <td>@Html.ActionLink("Get User", "GetUser", new { id = user.Id }) </td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = user.Id }) </td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = user.Id }, new { onclick = "return confirm()" }) </td>
+
+        </tr>
+
+        }
+    </tbody>
+</table>

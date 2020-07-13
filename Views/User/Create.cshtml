@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+
+</head>
+<body>
+    <div>
+        @*@Html.BeginForm("Creat", "UserController", FormMethod.Post)*@
+
+        <form action="/User/Create" method="post">
+            <input type="Hidden" name="id" value="0" />
+            <label> Name</label>
+            <input type="text" name="name" value="" />
+            <label> Surname</label>
+            <input type="text" name="surname" value="" />
+            <label> Age</label>
+            <input type="text" name="age" value="" />
+            <input type="submit" />
+        </form>
+        
+
+    </div>
+</body>
+</html>
